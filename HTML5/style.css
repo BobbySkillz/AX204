@@ -1,8 +1,16 @@
 h1 {
-	color: red;
-	font-family: Impact;
-};
+color: red;
+font-family: Impact;
+}
 
 #myCanvas {
-	border: 1px solid black;
-};
+border: 1px solid black;
+}
+
+img {
+	border: 5px yellow;
+}
+body {
+	background-image: url("http://static.trustedreviews.com/94/000039fd5/d8ed_orh500w750/pokemon-go-teams.jpg");
+
+}
