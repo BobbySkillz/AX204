@@ -32,9 +32,8 @@ function create(){
 	ground.body.immovable = true;
 	var ground = platform.create(0, game.world.height - 64, 'ground');
 	ground.body.immovable = true;
-}
 
-	//Player
+		//Player
 	player = game.add.sprite(32, game.world.height - 150, 'dude');
 		//animate the sprite
 		player.animation.add('left', [0,1,2,3], 10, true);
@@ -44,6 +43,9 @@ function create(){
 		player.body.bounce.y = 0.3;
 		player.body.gravity.y = 333;
 		player.body.colliderWorldBounds = true;
+}
+
+
 
 function update(){
 
