@@ -5,13 +5,16 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {Preload: preload, create:
 var scrore = 0;
 
 function preload(){
-	game.load.image('sky', 'assests/sky.png');
-	game.load.image('ground', 'assests/platform.png')
+	game.load.image('sky', 'assets/sky.png');
+	game.load.image('ground', 'assets/platform.png');
+	game.load.image('dude', 'assets/dude.png', 32, 48);
+	game.load.image('baddie', 'assets/baddie.png', 32, 32);
+
 }
 
 function create(){
 	//Give game Physic Engine
-	game.physics.starSystem(Phaser.Physics.ARCADE);
+	game.physics.startSystem(Phaser.Physics.ARCADE);
 	//add the sky
 	game.add.sprite(0, 0, 'sky');
 
@@ -30,6 +33,17 @@ function create(){
 	var ground = platform.create(0, game.world.height - 64, 'ground');
 	ground.body.immovable = true;
 }
+
+	//Player
+	player = game.add.sprite(32, game.world.height - 150, 'dude');
+		//animate the sprite
+		player.animation.add('left', [0,1,2,3], 10, true);
+		player.animation.add('left', [5,6,7,8], 10, true);
+		game.physics.arcade.enable(player);
+		// physics properties
+		player.body.bounce.y = 0.3;
+		player.body.gravity.y = 333;
+		player.body.colliderWorldBounds = true;
 
 function update(){
 
