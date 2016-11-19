@@ -1,14 +1,14 @@
 console.log("PEN PINEAPPLE APPLE APPLE PEN")
 
 //Declare the Variables
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {Preload: preload, create: create, update: update});
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 var scrore = 0;
 
 function preload(){
 	game.load.image('sky', 'assets/sky.png');
 	game.load.image('ground', 'assets/platform.png');
-	game.load.image('dude', 'assets/dude.png', 32, 48);
-	game.load.image('baddie', 'assets/baddie.png', 32, 32);
+	game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
+	game.load.spritesheet('baddie', 'assets/baddie.png', 32, 32);
 
 }
 
